@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<table class="table table-bordered center" style="width:50%">
+    <thead>
+      <tr>
+        <th scope="col">No.</th>
+        <th scope="col">Hotel Name</th>
+        <th scope="col">Postal Code</th>
+        <th scope="col">Positive Reviews</th>
+        <th scope="col">Negative reviews</th>
+        <th scope="col">Review-Score</th>
+        <th scope="col">Review Sentiment</th>
+        <th scope="col">Review Score Sentiment</th>
+        <th scope="col">Compound Score based on reviews</th>
+        <!-- is it possible to not include the last 2 columns? -->
+      </tr>
+    </thead>
+    <tbody>
+        {% for x in toptenpos %}
+        <tr>
+            <th scope="row">{{ loop.index }}</th>
+            
+            <td>{{ x[0] }}</td>
+            <td>{{ x[1] }}</td>
+            <td>{{ x[2] }}</td>
+            <td>{{ x[3] }}</td>
+            <td>{{ x[5] }}</td>
+            <td>{{ x[6] }}</td>
+            <td>{{ x[7] }}</td>
+            <td>{{ x[8] }}</td>
+
+
+          </tr>
+        {% endfor %}
+    </tbody> 
+
+    <tbody>
+        {% for x in toptenneg %}
+        <tr>
+            <th scope="row">{{ loop.index }}</th>
+            
+            {% for y in x %}
+            <td>{{ y }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody> 
+  </table>
+{% endblock %}

@@ -1,0 +1,224 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul style="text-align:center;color:red;">
+            {% for message in messages %}
+            {{ message }}
+            <br>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+
+<!--#############################################-->
+<table>
+
+
+
+
+
+
+
+
+
+
+
+<table class="center">
+    <th>
+        <table class="center">
+             <tr>
+                <th colspan="2"> {{ user.hotel_name }} </th>
+            </tr>
+        <tbody>
+              <tr>
+                <td>Overall</td>
+                <td>{{ my_hotel[0][2] }}{{ my_hotel[0][3] }}{{ my_hotel[0][4] }}</td>
+              </tr>
+
+              <tr>
+                <td>Cleanliness</td>
+                <td>{{ my_hotel[1] }}</td>
+              </tr>
+
+              <tr>
+                <td>Comfort</td>
+                <td>{{ my_hotel[2] }}</td>
+              </tr>
+
+              <tr>
+                <td>Location</td>
+                <td>{{ my_hotel[3] }}</td>
+              </tr>
+
+              <tr>
+                <td>Facilities</td>
+                <td>{{ my_hotel[4] }}</td>
+              </tr>
+              <tr>
+                <td>Staff</td>
+                <td>{{ my_hotel[5] }}</td>
+              </tr>
+               <tr>
+                <td>Value for money</td>
+                <td>{{ my_hotel[6] }}</td>
+              </tr>
+              <tr>
+                <td>Free wifi</td>
+                <td>{{ my_hotel[7] }}</td>
+              </tr>
+              <tr>
+                  <td colspan="2"><a class="btn btn-primary" href="/vicinity/{{ user.hotel_name }}.csv" role="button" style="margin:20px">Vicinity Map</a></td>
+
+              </tr>
+              <tr>
+               <td colspan="2"><image class="charts" src="../static/css/bargraph{{ user.hotel_name }}.png"/></td>
+              </tr>
+              <tr>
+              <td colspan="2"><image class="charts" src="../static/css/{{ user.hotel_name }}rating.png"></image></td>
+              </tr>
+              <tr>
+              <td colspan="2"><image class="charts" src="../static/css/{{ user.hotel_name }}rating_further.png"></image></td>
+              </tr>
+              <tr>
+              <td colspan="2"><a class="btn btn-primary" href="/tablereviewsRecent/{{ user.hotel_name }}" role="button" style="margin:20px">Recent Reviews</a></td>
+              </tr>
+              <tr>
+               <td colspan="2"><image class="charts" src="../static/css/{{ user.hotel_name }}top15words.png"/></td>
+              </tr>
+
+
+        </tbody>
+  </table>
+    </th>
+<!--                                        Seperation                          -->
+    <th>
+    <table class="center">
+      <th width="60%"></th>
+      <th></th>
+      <tr>
+      <th colspan="2"> {{ vic_comp_name }} </th>
+      </tr>
+      <tr>
+        <td>Overall</td>
+        <td>{{ spied_hotel[0][2] }}{{ spied_hotel[0][3] }}{{ spied_hotel[0][4] }}</td>
+      </tr>
+      <tr>
+        <td>Cleanliness</td>
+        <td>{{ spied_hotel[1] }}</td>
+      </tr>
+      <tr>
+        <td>Comfort</td>
+        <td>{{ spied_hotel[2] }}</td>
+      </tr>
+       <tr>
+        <td>Location</td>
+        <td>{{ spied_hotel[3] }}</td>
+      </tr>
+      <tr>
+        <td>Facilities</td>
+        <td>{{ spied_hotel[4] }}</td>
+      </tr>
+      <tr>
+        <td>Staff</td>
+        <td>{{ spied_hotel[5] }}</td>
+      </tr>
+       <tr>
+        <td>Value for money</td>
+        <td>{{ spied_hotel[6] }}</td>
+      </tr>
+      <tr>
+        <td>Free wifi</td>
+        <td>{{ spied_hotel[7] }}</td>
+      </tr>
+      <tr>
+          <td colspan="2"><a class="btn btn-primary" href="/vicinity/{{ vic_comp_name }}.csv" role="button" style="margin:20px">Vicinity Map</a></td>
+
+      </tr>
+      <tr>
+      <td colspan="2">
+    <image class="charts"  src="../static/css/bargraph{{ vic_comp_name }}.png"/>
+      </td>
+      </tr>
+      <tr>
+      <td colspan="2">
+      <image class="charts" src="../static/css/{{ vic_comp_name }}rating.png"></image>
+      </td>
+      </tr>
+      <tr>
+          <td colspan="2">
+      <image class="charts"  src="../static/css/{{ vic_comp_name }}rating_further.png"></image>
+      </td>
+      </tr>
+      <tr>
+          <td colspan="2"><a class="btn btn-primary" href="/tablereviewsRecent/{{ vic_comp_name }}" role="button" style="margin:20px">Recent Reviews</a></td>
+      </tr>
+        <tr>
+        <td colspan="2"><image class="charts" src="../static/css/{{ vic_comp_name }}top15words.png"/></td>
+        </tr>
+
+
+
+
+</table>
+
+</th>
+  </table>
+
+
+<!--<p>-->
+<!--  <a>-->
+<!--  <image src="../static/css/bargraph{{ user.hotel_name }}.png" style="width:600;height:500px;"/>-->
+<!--  </a>-->
+<!--</p>-->
+
+<!--<p>-->
+<!--  <a href="#">-->
+<!--  <image src="../static/css/bargraph{{ user.vic_comp_name }}..png"-->
+<!--  style="width:600;height:500px;"/>-->
+<!--  </a>-->
+<!--</p>-->
+
+<!--<p>-->
+<!--  <a href="#">-->
+<!--  <image src="../static/css/rating.png"-->
+<!--  style="width:300px;height:200px;"/>-->
+<!--  </a>-->
+
+<!--  <a href="#">-->
+<!--    <image src="../static/css/rating_furth.png"-->
+<!--    style="width:300px;height:200px;"/>-->
+<!--  </a>-->
+<!--</p>-->
+
+<!--<p> </p>-->
+
+
+
+
+
+
+
+
+ </table>
+
+
+<script type="text/javascript">
+                      vegaEmbed('#vis0', {spec0}).catch(console.error);
+                      vegaEmbed('#vis1', {spec1}).catch(console.error);
+                      vegaEmbed('#vis2', {spec2}).catch(console.error);
+                      vegaEmbed('#vis3', {spec3}).catch(console.error);
+                      vegaEmbed('#vis4', {spec4}).catch(console.error);
+                      vegaEmbed('#vis5', {spec5}).catch(console.error);
+</script>
+
+
+
+
+
+
+
+{% endblock %}

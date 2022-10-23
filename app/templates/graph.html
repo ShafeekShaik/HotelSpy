@@ -1,0 +1,24 @@
+{%extends "base.html"%}
+
+{%block content%}
+<br></br>
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Year and Month of reviews
+    </button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="/graphresult/0">All Years</a></li>
+      <li><a class="dropdown-item" href="/graphresult/1">2019</a></li>
+      <li><a class="dropdown-item" href="/graphresult/2">2020</a></li>
+      <li><a class="dropdown-item" href="/graphresult/3">2021</a></li>
+      <li><a class="dropdown-item" href="/graphresult/4">2022</a></li>
+    </ul>
+  </div>
+<!-- <p>{{graphyear}}</p> -->
+<a href="#">
+    <image src="../static/css/new_year.png"
+    style="width:500px;height:350px;"> 
+    <!-- "../static/css/new_year.png" -->
+    <!-- need to ensure that this vicinity map is specifically for the set profile, not the input  -->
+    </a>
+{%endblock%}

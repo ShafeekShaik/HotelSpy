@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+<br><br>
+<br><br>
+<h3  style="text-align:center">Register</h3><br><br>
+
+<div class="input-group" style="text-align:center;margin:auto;display:block">
+
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul style="text-align:center;color:red;">
+            {% for message in messages %}
+            {{ message }}
+            <br>
+            {% endfor %}
+             </ul>
+        {% endif %}
+        {% endwith %}
+
+            {{ form.username.label }}<br>
+            {{ form.username(size=32) }}<br>
+            {% for error in form.username.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+          <p>
+            {{ form.hotel_name.label }}<br>
+            {{ form.hotel_name(size=32) }}<br>
+            {% for error in form.hotel_name.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.email.label }}<br>
+            {{ form.email(size=50) }}<br>
+            {% for error in form.email.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.password.label }}<br>
+            {{ form.password(size=32) }}<br>
+            {% for error in form.password.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.password2.label }}<br>
+            {{ form.password2(size=32) }}<br>
+            {% for error in form.password2.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+</div>
+    {% endblock %}

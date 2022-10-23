@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% block content %}
+<br></br>
+
+<body>
+<div class="container">
+    <h2 style="text-align:center;">Profile Page</h2>
+    <!-- <p>Contextual classes can be used to color table rows or table cells. The classes that can be used are: .active, .success, .info, .warning, and .danger.</p> -->
+    <table class="table">
+      <thead>
+        <!-- <tr>
+          <th>name set</th>
+          <th>can be changed inputs</th>
+        </tr> -->
+      </thead>
+      <tbody>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td>Username:</td>
+          <td>{{ user.username }}</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        </tr>      
+        <tr class="company">
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td>Company Name:</td>
+          <td>The Barracks Hotel Sentosa by Far East Hospitality</td>
+          <td>&nbsp;&nbsp;&nbsp;</td>
+        </tr>
+        <tr class="webpage">
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td>Overall reviews for past few years:</td>
+          <td>Drop down function for Year and Month of reviews
+            <p>  
+              <a href="/graph">
+              <image src="../static/css/sort.png" 
+              style="width:20px;height:20px;"> 
+              <!-- need to ensure that this vicinity map is specifically for the set profile, not the input  -->
+              </a>
+          </td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        </tr>
+<!--        <tr class="overrating">-->
+<!--            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>-->
+<!--          <td>Company Webpage:</td>-->
+<!--          <td>Graph data from the company's webpage-->
+<!--            <p>  -->
+<!--              <a href="/reviews">-->
+<!--              <image src="../static/css/sort.png" -->
+<!--              style="width:20px;height:20px;"> -->
+<!--              &lt;!&ndash; need to ensure that this vicinity map is specifically for the set profile, not the input  &ndash;&gt;-->
+<!--              </a>-->
+<!--            </p>-->
+<!--          </td>-->
+<!--          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>-->
+<!--        </tr>-->
+        <tr class="averating">
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td>Recent Top 10 Positive and Top 10 Negative Reviews:</td>
+          <td>Most recent top 10 positive and most recent top 10 negative reviews
+            <p>  
+              <a href="/tablereviewsRecent/{{ user.hotel_name }}">
+              <image src="../static/css/sort.png" 
+              style="width:20px;height:20px;"> 
+              <!-- need to ensure that this vicinity map is specifically for the set profile, not the input  -->
+              </a>
+            </p>
+          </td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        </tr>
+        <tr class="keywords">
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td>Table reviews:</td>
+          <td>Top 10 Positive reviews from Singapore Hotels
+            <p>  
+              <a href="/tablereviews">
+              <image src="../static/css/sort.png" 
+              style="width:20px;height:20px;"> 
+              <!-- need to ensure that this vicinity map is specifically for the set profile, not the input  -->
+              </a>
+            </p>
+          </td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        </tr>
+        <tr class="map">
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>Vicinity Map:</td>
+            <td>Link to vicinity map for my User
+              <p>  
+                <a href="/vicinity/{{ user.hotel_name }}.csv">
+                <image src="../static/css/location.png" 
+                style="width:20px;height:20px;"> 
+                <!-- need to ensure that this vicinity map is specifically for the set profile, not the input  -->
+                </a>
+              </p>
+            </td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+{% endblock %}

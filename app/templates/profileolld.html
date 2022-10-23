@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<body>
+<div class="container">
+    <h2 style="text-align:center;">Profile Page</h2>
+    <!-- <p>Contextual classes can be used to color table rows or table cells. The classes that can be used are: .active, .success, .info, .warning, and .danger.</p> -->
+    <table class="table " style="margin:auto;width:30%">
+      <thead>
+        <!-- <tr>
+          <th>name set</th>
+          <th>can be changed inputs</th>
+        </tr> -->
+      </thead>
+      <tbody>
+        <tr>
+          <td>Username:</td>
+          <td>{{ user.username }}</td>
+        </tr>      
+        <tr class="company">
+          <td>Company Name:</td>
+          <td>{{ user.hotel_name }}</td>
+        </tr>
+        <tr class="webpage">
+          <td>User Email:</td>
+          <td>{{ user.email }}</td>
+        </tr>
+        <tr class="map">
+            <td>Vicinity Map:</td>
+            <td>link to vicinity map 
+                <a href='/vicinity/{{ vic_comp_name }}'>
+                <image src="../static/css/location.png" width="20" height="20"/>
+                    <!-- don't need to state the previous file directory ../ in front of static -->
+                </a></td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+{% endblock %}

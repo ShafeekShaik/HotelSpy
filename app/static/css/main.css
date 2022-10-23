@@ -1,0 +1,27 @@
+body {
+    color:black;
+    margin: 5;
+    font-family: montserrat;
+    font-weight:bold;
+}
+
+spy_input {
+flex:auto;
+width:30%;
+aria-label:Search;
+aria-describedby:search-addon;
+padding: 10px;
+}
+
+.form_control{display:inline-flex;}
+
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.charts {
+    width:80%
+}
+

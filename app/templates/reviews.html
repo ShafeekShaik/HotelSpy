@@ -1,0 +1,195 @@
+{% extends "base.html" %}
+
+{% block content %}
+<table class="table table-bordered center" style="width:30%">
+  <thead>
+    <tr>
+      <th scope="col">Overall</th>
+      <th scope="col">Cleanliness</th>
+      <th scope="col">Comfort</th>
+      <th scope="col">Location</th>
+      <th scope="col">Facilities</th>
+      <th scope="col">Staff</th>
+      <th scope="col">Value for money</th>
+      <th scope="col">Free wifi</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+      {% for x in numberrating %}
+          <td>{{x}}</td>
+      {% endfor %}
+      </tr>
+
+  </tbody> 
+</table>
+<!--#############################################-->
+<table class="center">
+<th>
+  <table class="center">
+      <tr>
+      <th colspan="2"> Placeholder </th>
+
+      </tr>
+      <tr>
+        <td>Overall</td>
+        <td>{{ numberrating[0] }}</td>
+      </tr>
+      <tr>
+        <td>Cleanliness</td>
+        <td>{{ numberrating[1] }}</td>
+      </tr>
+      <tr>
+        <td>Comfort</td>
+        <td>{{ numberrating[2] }}</td>
+      </tr>
+       <tr>
+        <td>Location</td>
+        <td>{{ numberrating[3] }}</td>
+      </tr>
+      <tr>
+        <td>Facilities</td>
+        <td>{{ numberrating[4] }}</td>
+      </tr>
+      <tr>
+        <td>Staff</td>
+        <td>{{ numberrating[5] }}</td>
+      </tr>
+       <tr>
+        <td>Value for money</td>
+        <td>{{ numberrating[6] }}</td>
+      </tr>
+      <tr>
+        <td>Free wifi</td>
+        <td>{{ numberrating[7] }}</td>
+      </tr>
+  </table>
+</th>
+<th>
+  <table class="center">
+      <tr>
+      <th colspan="2"> Placeholder </th>
+
+      </tr>
+      <tr>
+        <td>Overall</td>
+        <td>{{ numberrating[0] }}</td>
+      </tr>
+      <tr>
+        <td>Cleanliness</td>
+        <td>{{ numberrating[1] }}</td>
+      </tr>
+      <tr>
+        <td>Comfort</td>
+        <td>{{ numberrating[2] }}</td>
+      </tr>
+       <tr>
+        <td>Location</td>
+        <td>{{ numberrating[3] }}</td>
+      </tr>
+      <tr>
+        <td>Facilities</td>
+        <td>{{ numberrating[4] }}</td>
+      </tr>
+      <tr>
+        <td>Staff</td>
+        <td>{{ numberrating[5] }}</td>
+      </tr>
+       <tr>
+        <td>Value for money</td>
+        <td>{{ numberrating[6] }}</td>
+      </tr>
+      <tr>
+        <td>Free wifi</td>
+        <td>{{ numberrating[7] }}</td>
+      </tr>
+</table>
+
+</th>
+  </table>
+
+<!--<table class="center">-->
+<!--  <tr>-->
+<!--  <th colspan="2"> Placeholder </th>-->
+
+<!--  </tr>-->
+<!--  <tr>-->
+<!--    <td>Overall</td>-->
+<!--    <td>{{ numberrating[0] }}</td>-->
+<!--  </tr>-->
+<!--  <tr>-->
+<!--    <td>Eve</td>-->
+<!--    <td>{{ numberrating[1] }}</td>-->
+<!--  </tr>-->
+<!--  <tr>-->
+<!--    <td>John</td>-->
+<!--    <td>{{ numberrating[2] }}</td>-->
+<!--  </tr>-->
+<!--   <tr>-->
+<!--    <td>Jill</td>-->
+<!--    <td>{{ numberrating[3] }}</td>-->
+<!--  </tr>-->
+<!--  <tr>-->
+<!--    <td>Eve</td>-->
+<!--    <td>{{ numberrating[4] }}</td>-->
+<!--  </tr>-->
+<!--  <tr>-->
+<!--    <td>John</td>-->
+<!--    <td>{{ numberrating[5] }}</td>-->
+<!--  </tr>-->
+<!--   <tr>-->
+<!--    <td>Jill</td>-->
+<!--    <td>{{ numberrating[6] }}</td>-->
+<!--  </tr>-->
+<!--  <tr>-->
+<!--    <td>Eve</td>-->
+<!--    <td>{{ numberrating[7] }}</td>-->
+<!--  </tr>-->
+<!--</table>-->
+
+
+
+
+
+
+
+
+
+
+
+
+<p>  
+  <a href="#">
+  <image src="../static/css/rating.png" 
+  style="width:600;height:500px;"> 
+  </a>
+</p>
+
+<p>  
+  <a href="#">
+  <image src="../static/css/rating_further.png" 
+  style="width:600;height:500px;"> 
+  </a>
+</p>
+
+<p>  
+  <a href="#">
+  <image src="../static/css/wordcloudPos.png" 
+  style="width:300px;height:200px;"> 
+  </a>
+
+  <a href="#">
+    <image src="../static/css/wordcloudNeg.png" 
+    style="width:300px;height:200px;"> 
+  </a>
+</p>
+
+<p> </p>
+
+{% endblock %}
+
+
+
+
+
+

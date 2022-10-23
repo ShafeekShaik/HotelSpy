@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<br><br>
+<br><br>
+<h3 style="text-align:center">Spy on Hotels</h3>
+<br><br>
+<div class="input-group" style="margin-left: auto;margin-right: auto;width:40%;">
+    <form action="/spy" method="post" autocomplete="off" novalidate>
+        {{ form.hidden_tag() }}
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul style="text-align:center;color:red;">
+            {% for message in messages %}
+            {{ message }}
+            <br>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+            {{ form.hotel_name(class="form-control rounded spy_input",style="display:inline-flex;margin:10px",size=40, placeholder="Hotel Name") }}
+            {% for error in form.hotel_name.errors %}
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+           {{ form.hotel_url(class="form-control rounded spy_input",style="display:inline-flex;margin:10px", size=40, placeholder="Hotel Link : E.g https://www.booking.com/reviews/sg/hotel/carlton.en-gb.html") }}
+            {% for error in form.hotel_url.errors %}
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+
+        {{ form.submit(class=" form-control btn btn-outline-primary",style="display:inline-flex;margin:10px"   ) }}
+    </form>
+
+</div>
+
+
+{% endblock %}
